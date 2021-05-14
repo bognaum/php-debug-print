@@ -116,9 +116,22 @@
 			$ob1->c = new stdClass();
 			$ob1->c->d = "10";
 
+			function f1()
+			{
+				global $data_structure;
+				DP($data_structure, '$data_structure');
+			}
+
+			function f2()
+			{
+				f1();
+			}
+
 		?>
 		<?php DP($data_structure, '$data_structure'); ?>
 		<?php DP($ob1, '$ob1'); ?>
+		<h3>f2()</h3>
+		<?php f2(); ?>
 	</div>
 </body>
 </html>
