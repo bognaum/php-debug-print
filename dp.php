@@ -6,12 +6,9 @@
 				(function () {
 					const 
 						title = "<?= $title ?>",
-						v = `<?php var_dump($var)?>`
-							.replaceAll("\\", "\\\\")
-							.replaceAll("$", "\$"),
-						btc = `<?php debug_print_backtrace(); ?>`
-							.replaceAll("\\", "\\\\")
-							.replaceAll("$", "\$");
+						v     = String.raw`<?php var_dump($var)?>`
+						btc   = String.raw`<?php debug_print_backtrace(); ?>`
+							.replace(/^(#\d+)/mg, `<b>$1</b>`);
 
 					const 
 						formated = v
@@ -23,8 +20,8 @@
 							.replaceAll("}", "</details>"),
 						str = [
 							`<details>`,
-								`<summary style="cursor: pointer;">debug_print_backtrace</summary>`,
-								`<pre>${btc}</pre>`,
+								`<summary style="cursor: pointer;">(ƒ>ƒ>ƒ)</summary>`,
+								`<pre style="white-space: pre-wrap;">${btc}</pre>`,
 							`</details>`,
 							`<b>${title}</b> : ${formated}`,
 						].join("\n");
