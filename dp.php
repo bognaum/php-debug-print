@@ -12,12 +12,19 @@
 
 					const 
 						formated = v
-							.replaceAll("=>\n", " => ")
-							.replaceAll("\n", "<br>")
+							// .replaceAll("=>\n", " => ")
+							// .replaceAll("\n", "<br>")
 							.replaceAll("{", `
 								<details style="margin-left: 20px;">
-									<summary style="cursor: pointer;">###</summary>`)
-							.replaceAll("}", "</details>"),
+									<summary style="cursor: pointer;">...</summary>`)
+							.replaceAll("}", "</details>")
+							.replace(/^\s+(\[.+?\])=>\n(.*?$)/gm, `
+								<div style="display: table-row;">
+									<div style="display: table-cell;">$1</div>
+									<div style="display: table-cell;">&nbsp;=>&nbsp;</div>
+									<div style="display: table-cell;">$2</div>
+								</div>
+							`),
 						str = [
 							`<details>`,
 								`<summary style="cursor: pointer;">(ƒ>ƒ>ƒ)</summary>`,
