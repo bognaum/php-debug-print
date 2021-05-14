@@ -16,7 +16,7 @@
 							// .replaceAll("\n", "<br>")
 							.replaceAll("{", `
 								<details style="margin-left: 20px;">
-									<summary style="cursor: pointer;">...</summary>`)
+									<summary style="cursor: pointer;"></summary>`)
 							.replaceAll("}", "</details>")
 							.replace(/^\s+(\[.+?\])=>\n(.*?$)/gm, `
 								<div style="display: table-row;">
