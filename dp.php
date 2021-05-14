@@ -26,7 +26,12 @@
 							`<b>${title}</b> : ${formated}`,
 						].join("\n");
 
-					document.write(str);
+					document.write(`
+						<div 
+							class="DP" 
+							style="font-family: consolas, courier, monospace"
+						>${str}</div>
+					`);
 				})()
 			</script>
 		<?php
