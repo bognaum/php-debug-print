@@ -8,7 +8,8 @@
 						title = "<?= $title ?>",
 						v     = String.raw`<?php var_dump($var)?>`
 						btc   = String.raw`<?php debug_print_backtrace(); ?>`
-							.replace(/^(#\d+)/mg, `<b>$1</b>`);
+							.replace(/^(#\d+)/mg, `<i><b>$1</b></i>`)
+							.replace(/(called at \[)((.)+?)(\])$/mg, `$1<i><b>$2</b></i>$4`);
 
 					const 
 						formated = v
