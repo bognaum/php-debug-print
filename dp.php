@@ -36,7 +36,10 @@
 					document.write(`
 						<div 
 							class="DP" 
-							style="font-family: consolas, courier, monospace"
+							style="
+								font-family: consolas, courier, monospace;
+								margin: 20px;
+							"
 						>${str}</div>
 					`);
 				})()
