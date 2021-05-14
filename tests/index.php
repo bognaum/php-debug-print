@@ -16,8 +16,8 @@
 		<?php
 			$data_structure = [
 				[
-					"section_id" => "some_file_types",
-					"f_name"     => "some_file_types.php",
+					"section_id" => 22,
+					"f_name"     => true,
 					"title"      => "Обработка контента",
 					"ch"         => [
 						[
@@ -110,8 +110,15 @@
 				],
 			];
 
+			$ob1 = new stdClass();
+			$ob1->a = 10;
+			$ob1->b = "10";
+			$ob1->c = new stdClass();
+			$ob1->c->d = "10";
+
 		?>
 		<?php DP($data_structure, '$data_structure'); ?>
+		<?php DP($ob1, '$ob1'); ?>
 	</div>
 </body>
 </html>
