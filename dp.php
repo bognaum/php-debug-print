@@ -1,5 +1,5 @@
 <?php
-	function DP($var, $title="")
+	function DP($var=NULL, $title="")
 	{
 		?>
 			<script type="text/javascript">
