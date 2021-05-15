@@ -10,11 +10,11 @@
 						btc   = String.raw`<?php debug_print_backtrace(); ?>`
 							.replace(/^(.+?\().*(\).*?)\n/, "$1...$2\n")
 							.replace(
-								/^(#\d+)(.+?)(called at \[)(.+?)(\])/mg, 
+								/^(#\d+)(.+?)(called at \[)(.+?):(\d+?)(\])/mg, 
 								`
 									<tr>
 										<td rowspan="2">$1</td>
-										<td>
+										<td colspan="2">
 											<div style="
 												max-height: 100px; 
 												overflow: auto;
@@ -24,7 +24,8 @@
 										</td>
 									</tr>
 									<tr>
-										<td>$3<i><b>$4</b></i>$5</td>
+										<td><b>&nbsp;$5&nbsp;</b></td>
+										<td><b>      $4      </b></td>
 									</tr>
 								`
 							);
