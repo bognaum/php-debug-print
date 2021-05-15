@@ -9,8 +9,18 @@
 						v     = String.raw`<?php var_dump($var)?>`
 						btc   = String.raw`<?php debug_print_backtrace(); ?>`
 							.replace(/^(.+?\().*(\).*?)\n/, "$1...$2\n")
-							.replace(/^(#\d+)/mg, `<i><b>$1</b></i>`)
-							.replace(/(called at \[)((.)+?)(\])$/mg, `$1<i><b>$2</b></i>$4`);
+							.replace(
+								/^(#\d+)(.+?)(called at \[)(.+?)(\])/mg, 
+								`
+									<tr>
+										<td rowspan="2">$1</td>
+										<td>$2</td>
+									</tr>
+									<tr>
+										<td>$3<i><b>$4</b></i>$5</td>
+									</tr>
+								`
+							);
 
 					const 
 						formated = v
@@ -30,7 +40,9 @@
 						str = [
 							`<details>`,
 								`<summary style="cursor: pointer;">(ƒ>ƒ>ƒ)</summary>`,
-								`<pre style="white-space: pre-wrap;">${btc}</pre>`,
+								`<table border cellspacing="0" cellpadding="5">
+									<tbody>${btc}</tbody>
+								</table>`,
 							`</details>`,
 							`<b>${title}</b> : ${formated}`,
 						].join("\n");
