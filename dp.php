@@ -14,7 +14,14 @@
 								`
 									<tr>
 										<td rowspan="2">$1</td>
-										<td>$2</td>
+										<td>
+											<div style="
+												max-height: 100px; 
+												overflow: auto;
+											">
+												$2
+											</div>
+										</td>
 									</tr>
 									<tr>
 										<td>$3<i><b>$4</b></i>$5</td>
