@@ -31,8 +31,6 @@
 
 					const 
 						formated = v
-							// .replaceAll("=>\n", " => ")
-							// .replaceAll("\n", "<br>")
 							.replaceAll("{", `
 								<details style="margin-left: 20px;">
 									<summary style="cursor: pointer;"></summary>`)
