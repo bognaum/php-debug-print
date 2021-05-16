@@ -13,8 +13,10 @@
 								/^(#\d+)(.+?)(called at \[)(.+?):(\d+?)(\])/mg, 
 								`
 									<tr>
-										<td rowspan="2">$1</td>
-										<td colspan="2">
+										<td rowspan="2" 
+											title="call number">$1</td>
+										<td colspan="2" 
+											title="function & adfs">
 											<div style="
 												max-height: 100px; 
 												overflow: auto;
@@ -24,8 +26,12 @@
 										</td>
 									</tr>
 									<tr>
-										<td><b>&nbsp;$5&nbsp;</b></td>
-										<td><b>      $4      </b></td>
+										<td title="line">
+											<b>&nbsp;$5&nbsp;</b>
+										</td>
+										<td title="file">
+											<b>$4</b>
+										</td>
 									</tr>
 								`
 							);
