@@ -26,8 +26,15 @@
 										</td>
 									</tr>
 									<tr>
-										<td title="line">
-											<b>&nbsp;$5&nbsp;</b>
+										<td 
+											title="line"
+											style="
+												text-align: center;
+												padding-left: 10px;
+												padding-right: 10px;
+											"
+										>
+											<b>$5</b>
 										</td>
 										<td title="file">
 											<b>$4</b>
