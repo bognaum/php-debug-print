@@ -70,6 +70,7 @@
 						<div 
 							class="DP" 
 							style="
+								text-align: left;
 								font-family: consolas, courier, monospace;
 								margin: 20px;
 							"
