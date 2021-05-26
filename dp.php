@@ -2,10 +2,10 @@
 	function DP($var=NULL, $title="")
 	{
 		?>
-			<script type="text/javascript">
+			<script type="text/javascript" style="display: none;">
 				(function () {
 					const 
-						title = "<?= $title ?>",
+						title = `<?= $title ?>`,
 						v     = String.raw`<?php var_dump($var)?>`
 						btc   = String.raw`<?php debug_print_backtrace(); ?>`
 							.replace(/^(.+?\().*(\).*?)\n/, "$1...$2\n")
@@ -47,12 +47,17 @@
 						formated = v
 							.replaceAll("{", `
 								<details style="margin-left: 20px;">
-									<summary style="cursor: pointer;"></summary>`)
+									<summary style="
+										cursor: pointer;
+										margin-left: -20px;
+										padding-left: 20px;
+									"></summary>`)
 							.replaceAll("}", "</details>")
-							.replace(/^\s+(\[.+?\])=>\n(.*?$)/gm, `
+							.replace(/^\s+\[("?.+?"?)\]=>\n(.*?$)/gm, `
 								<div style="display: table-row;">
-									<div style="display: table-cell;">$1</div>
-									<div style="display: table-cell;">&nbsp;=>&nbsp;</div>
+									├&nbsp;
+									<div style="display: table-cell; text-align: right;">$1</div>
+									<div style="display: table-cell;">&nbsp;-&nbsp;</div>
 									<div style="display: table-cell;">$2</div>
 								</div>
 							`),
